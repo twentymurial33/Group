@@ -1,13 +1,59 @@
-.jumbotron{
+.jumbotron {
     background-color: bisque;
-   
 }
-
-.form-inline{
+.form-inline {
     position: relative;
     align-content: center;
 }
-.navbar-brand {
-    font-size: 35px;
-    color: aqua;
+.navbar {
+    background-color: bisque;
 }
+#buyBtn {
+    margin-left: 125px;
+    background-color: lavender;
+    width: 70px;
+}
+#sellBtn {
+    background-color: lavender;
+    width: 70px;
+}
+#signinBtn, #submitBtn {
+    background-color: lavender;
+}
+.postStuff {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    text-shadow: 2px 2px 5px lightcoral;
+    margin-left: 50px;
+}
+.sellStuff {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    text-shadow: 2px 2px 5px lightcoral;
+    margin-left: 100px;
+}
+#sellersearch {
+    width: 450px;
+    height: 50px;
+    text-align: center;
+}
+.form-group-sell {
+    width: 800px;
+    height: 600px;
+    text-align: center;
+    margin-left: 275px;
+    
+}
+#uploadBtn {
+    font-style: italic;
+    font-weight: bold;
+    width: 150px;
+    background-color: lavender;
+    text-shadow: 2px 2px 5px lightgray;
+
+}
+ 
