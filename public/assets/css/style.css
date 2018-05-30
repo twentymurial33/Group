@@ -5,6 +5,19 @@
     position: relative;
     align-content: center;
 }
+h3 {
+    font-size: 50px;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 2px 2px 5px lightcoral;
+
+}
+.btn, .btn-default {
+    background-color: lavender;
+}
+#createAccount {
+    margin-left: 400px;
+}
 .navbar {
     background-color: bisque;
 }
@@ -52,7 +65,7 @@
     font-style: italic;
     font-weight: bold;
     width: 150px;
-    background-color: lavender;
+    background-color: rgb(231, 230, 250);
     text-shadow: 2px 2px 5px lightgray;
 
 }
