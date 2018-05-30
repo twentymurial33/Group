@@ -7,4 +7,7 @@
     position: relative;
     align-content: center;
 }
-
+.navbar-brand {
+    font-size: 35px;
+    color: aqua;
+}
