@@ -1,5 +1,5 @@
 const path = require('path');
-var friendName = require("../app/data/friendName.js")
+
 
 
 
