@@ -25,6 +25,8 @@ $(document).ready(function () {
     $("#createAccount").on('click', function (event) {
         event.preventDefault();
         $('#new-user-modal').show();
+        $('#newsign-in').hide();
+        $('#returnUser').hide();        
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -35,11 +37,13 @@ $(document).ready(function () {
     });
     $('#signIn').on('click', function (event) {
         event.preventDefault();
-        $('#return-user-modal').show;
+        $('#return-user-modal').show();
+        $('#newsign-in').hide();
+        $('#returnUser').hide();
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
         });
-    })
+    });
 });
 
