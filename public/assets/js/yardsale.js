@@ -22,8 +22,9 @@ function oldUser() {
 };
 
 $(document).ready(function () {
-    $("createAccount").on('click', function (event) {
+    $("#createAccount").on('click', function (event) {
         event.preventDefault();
+        $('#new-user-modal').show();
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -32,5 +33,13 @@ $(document).ready(function () {
             };
         });
     });
+    $('#signIn').on('click', function (event) {
+        event.preventDefault();
+        $('#return-user-modal').show;
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+        });
+    })
 });
 
