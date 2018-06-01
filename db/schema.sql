@@ -12,20 +12,12 @@ id int NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE products_sold (
+CREATE TABLE products (
 product_id INT NOT NULL AUTO_INCREMENT,
   product_name VARCHAR(45) NULL,
   sellers_name VARCHAR(45) NULL,
   price DECIMAL(10,2) NULL,
-  stock_quantity INT NULL,
-  PRIMARY KEY (product_id)
+  sold BOOLEAN NOT NULL default 0,
+PRIMARY KEY (product_id)
 );
- CREATE TABLE products_bought (
-   product_id int NOT NULL AUTO_INCREMENT,
-   product_name VARCHAR(45) NULL,
-   sellers_name VARCHAR(45) NULL,
-   buyers_name VARCHAR (45) NULL,
-   price DECIMAL(10,2) NULL,
-   date_purchased DATETIME,
- );
-
+ 

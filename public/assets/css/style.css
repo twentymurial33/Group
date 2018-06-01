@@ -10,7 +10,6 @@ h3 {
     font-weight: bold;
     font-style: italic;
     text-shadow: 2px 2px 5px lightcoral;
-
 }
 .btn, .btn-default {
     background-color: lavender;
@@ -67,6 +66,5 @@ h3 {
     width: 150px;
     background-color: rgb(231, 230, 250);
     text-shadow: 2px 2px 5px lightgray;
-
 }
  
