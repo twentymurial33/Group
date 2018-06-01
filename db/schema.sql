@@ -3,20 +3,20 @@ USE yard_sale_db;
 
 CREATE TABLE users (
 id int NOT NULL AUTO_INCREMENT,
-	name VARCHAR (100) NOT NULL,
+	first_name VARCHAR (100) NOT NULL,
+  last_name VARCHAR (100) NOT NULL,
 	email VARCHAR (100),
-    user_created DATETIME,
-    products_sold INT AUTO_INCREMENT,
-    products_bought INT AUTO_INCREMENT,
-    buyers_rating INT,
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE products (
 product_id INT NOT NULL AUTO_INCREMENT,
-  product_name VARCHAR(45) NULL,
-  sellers_name VARCHAR(45) NULL,
+  user_id INT NOT NULL,
+  product_name VARCHAR (200) NOT NULL,
+  product_description VARCHAR (1000) NOT NULL,
+  img_url VARCHAR (200),
   price DECIMAL(10,2) NULL,
+  price_negotiable BOOLEAN NOT NULL default 0,
   sold BOOLEAN NOT NULL default 0,
 PRIMARY KEY (product_id)
 );

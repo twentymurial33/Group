@@ -1,6 +1,11 @@
 const path = require('path');
-const db = require ('../SEQUELIZESTUFF')
+const db = {};
 
+db.Sequelize = Sequelize;  
+db.sequelize = sequelize;
+
+db.user = require('../models/user.js')(sequelize, Sequelize);  
+db.products = require('../models/products.js')(sequelize, Sequelize);  
 
 
 
