@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname,"public")))
 app.get("/",function(req,res){
 res.render("index");});
 
-var app = express();
+
 
 app.listen(3000,function(){
    console.log("Server Started on Port 3000");
