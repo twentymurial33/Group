@@ -1,12 +1,12 @@
 const path = require('path');
 const sequelize = require('sequelize');
-const db = {};
+const db = require('../models')
 
-db.Sequelize = Sequelize;  
-db.sequelize = sequelize;
+// db.Sequelize = Sequelize;  
+// db.sequelize = sequelize;
 
-db.user = require('../models/user.js')(sequelize, Sequelize);  
-db.products = require('../models/products.js')(sequelize, Sequelize);  
+// db.user = require('../models/user.js')(sequelize, Sequelize);  
+// db.products = require('../models/products.js')(sequelize, Sequelize);  
 
 
 
