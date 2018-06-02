@@ -1,4 +1,5 @@
 const path = require('path');
+const sequelize = require('sequelize');
 const db = {};
 
 db.Sequelize = Sequelize;  

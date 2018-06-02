@@ -1,9 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var Sequelize = require('sequelize');
-var path=require("path");
 //Middleware
-
+const app = express();
 // View Engine
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname,"views"));
