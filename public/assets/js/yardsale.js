@@ -25,7 +25,7 @@ $(document).ready(function () {
     $("#createAccount").on('click', function(event) {
         event.preventDefault();
         $('#new-user-modal').show();
-        $('#return-user-modal').hide();
+        $('#signIn').hide();
         $('#createAccount').hide();
         newAccount(email, password);       
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
@@ -39,12 +39,18 @@ $(document).ready(function () {
     $('#signIn').on('click', function (event) {
         event.preventDefault();
         $('#return-user-modal').show();
-        $('#newsign-in').hide();
-        $('#returnUser').hide();
+        $('#signIn').hide();
+        $('#createAccount').hide();
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
         });
     });
 });
+$('#uploadBtn').on('click', function(event) {
+    event.preventDefault();
+
+})
+
+
 
