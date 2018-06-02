@@ -13,6 +13,13 @@ h3 {
 }
 .btn, .btn-default {
     background-color: lavender;
+    width: 150px;
+    height:50px;
+}
+img {
+    margin-left: 300px;
+    width: 500px;
+    height:250px;
 }
 #createAccount {
     margin-left: 400px;
@@ -27,7 +34,7 @@ h3 {
 }
 #sellBtn {
     background-color: lavender;
-    width: 70px;
+    width: 100px;
 }
 #signinBtn, #submitBtn {
     background-color: lavender;
@@ -66,4 +73,8 @@ h3 {
     width: 150px;
     background-color: rgb(231, 230, 250);
     text-shadow: 2px 2px 5px lightgray;
+}
+#searchInput {
+    width: 600px;
+    margin-left: 250px;
 }

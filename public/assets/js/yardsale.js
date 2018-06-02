@@ -5,7 +5,7 @@ var email = '';
 var password = '';
 var oldEmail = '';
 var oldPassword = '';
-var $newItemInput = {
+var newItemInput = {
     nameInput = $('#item-name').val().trim(),
     descriptionInput = $('#item-dewscription').val().trim(),
     urlInput = $('#item-url').val().trim(),
@@ -56,20 +56,20 @@ $(document).ready(function () {
         });
     });
 });
-var items = [];
 
-function addItem() {
+function addItem(event) {
     event.preventDefault();
     var newItem = {
         text: $newItemInput.val().trim(),
         complete: false
     };
-    $.post("/api/posts", items, );
-    $newItemInput.val("");
+    $.post("/api/posts", items);
+    newItemInput.val("");
 };
 
 $('#uploadBtn').on('click', function (event) {
     event.preventDefault();
+    addItem();
 
 });
 
