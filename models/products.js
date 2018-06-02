@@ -1,16 +1,9 @@
-// Dependencies
-// =============================================================
+module.exports = function(sequelize, DataTypes) {
 
-// Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
-
-// Creates a "Products" model that matches up with DB
-var Products = sequelize.define("products", {
+var Product = sequelize.define("Product", {
   // Primary Key
   product_id: {
-      type: DataTypes.INT,
+      type: DataTypes.INTEGER,
       primaryKey: true
   },
   product_name: {
@@ -36,9 +29,5 @@ var Products = sequelize.define("products", {
 }, {
   timestamps: true
 });
-
-// Syncs with DB
-Products.sync();
-
-// Makes the Products Model available for other files (will also create a table)
-module.exports = Products;
+return Product
+}
