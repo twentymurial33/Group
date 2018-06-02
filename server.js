@@ -14,9 +14,6 @@ app.use(express.static("public"));
 app.set("view engine","ejs");
 // app.engine("ejj", );
 
-require('./routes/apiroutes.js')(app);
-require('./routes/htmlroutes.js')(app);
-
 app.get("/",function(req,res){
   res.render("pages/index");
 })
