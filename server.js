@@ -14,7 +14,7 @@ app.use(express.static("public"));
 app.set("view engine","ejs");
 // app.engine("ejj", );
 
-app.get("/",function(req,res){
+app.get("/index",function(req,res){
   res.render("pages/index");
 })
 
