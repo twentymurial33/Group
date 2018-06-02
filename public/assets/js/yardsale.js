@@ -12,7 +12,7 @@ var email = '';
 var password = '';
 var oldEmail = '';
 var oldPassword = '';
-function newUser() {
+function newAccount() {
     email = $('#newemailInput').val();
     password = $('#newpasswordInput').val();
 };
@@ -22,11 +22,12 @@ function oldUser() {
 };
 
 $(document).ready(function () {
-    $("#createAccount").on('click', function (event) {
+    $("#createAccount").on('click', function(event) {
         event.preventDefault();
         $('#new-user-modal').show();
-        $('#newsign-in').hide();
-        $('#returnUser').hide();        
+        $('#return-user-modal').hide();
+        $('#createAccount').hide();
+        newAccount(email, password);       
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
