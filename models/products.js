@@ -10,37 +10,27 @@ var sequelize = require("../config/connection.js");
 var Products = sequelize.define("products", {
   // Primary Key
   product_id: {
-      type: Sequelize.INT,
+      type: DataTypes.INT,
       primaryKey: true
   },
-  // Foreign Key
-  user_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      // This is a reference to another model
-      model: User,
-      // This is the column name of the referenced model
-      key: 'id',
-    }
-  },
   product_name: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   product_description: {
-    type: Sequelize.STRING
+    type: DataTypes.STRING
   },
   img_url: {
-    type: Sequelize.TEXT
+    type: DataTypes.TEXT
   },
   price: {
-    type: Sequelize.DECIMAL
+    type: DataTypes.DECIMAL
   },
   price_negotiable: {
-    type: Sequelize.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     defaultValue: false
   },
   sold: {
-    type: Sequelize.BOOLEAN,
+    type: DataTypes.BOOLEAN,
     defaultValue: false
   }
 }, {
