@@ -5,11 +5,7 @@ var email = '';
 var password = '';
 var oldEmail = '';
 var oldPassword = '';
-var newItemInput = {
-    nameInput = $('#item-name').val().trim(),
-    descriptionInput = $('#item-dewscription').val().trim(),
-    urlInput = $('#item-url').val().trim(),
-};
+
 var config = {
     apiKey: "AIzaSyAz8V0oTOGh0If5LubLLMPGF8OQTZeWJ4U",
     authDomain: "yard-sale-fe238.firebaseapp.com",
@@ -50,6 +46,7 @@ $(document).ready(function () {
         $('#return-user-modal').show();
         $('#signIn').hide();
         $('#createAccount').hide();
+        oldAccount();
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -59,12 +56,13 @@ $(document).ready(function () {
 
 function addItem(event) {
     event.preventDefault();
-    var newItem = {
-        text: $newItemInput.val().trim(),
-        complete: false
-    };
-    $.post("/api/posts", items);
-    newItemInput.val("");
+    var itemInput = $('#item-name').val().trim();
+    var descriptionInput = $('#item-dewscription').val().trim();
+    var urlInput = $('#item-url').val().trim();
+    var categoryInput = $('#category').val().trim();
+    
+    $.post("/api/posts", itemInput, descriptionInput, urlInput, categoryInput);
+    
 };
 
 $('#uploadBtn').on('click', function (event) {
