@@ -11,19 +11,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// let ejs = require('ejs');
-
 app.set("view engine","ejs");
 // app.engine("ejj", );
 
-require('./routes/apiroutes.js')(app);
-require('./routes/htmlroutes.js')(app);
-// app.use(routes);
-// app.get("/",function(req,res){
-// res.render("index");});
+app.get("/",function(req,res){
+  res.render("pages/index");
+})
 
-// ejs.render('<$= users.join(" | "); $>', {users: users});
-// => 'geddy | neil | alex'
+require('./routes/htmlroutes.js')(app);
+require('./routes/apiroutes.js')(app);
 
 app.listen(PORT,function(){
    console.log("Server Started on Port 3000");
