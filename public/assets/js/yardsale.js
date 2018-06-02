@@ -1,3 +1,15 @@
+var nameInput = "";
+var descriptionInput = "";
+var urlInput = "";
+var email = '';
+var password = '';
+var oldEmail = '';
+var oldPassword = '';
+var $newItemInput = {
+    nameInput = $('#item-name').val().trim(),
+    descriptionInput = $('#item-dewscription').val().trim(),
+    urlInput = $('#item-url').val().trim(),
+};
 var config = {
     apiKey: "AIzaSyAz8V0oTOGh0If5LubLLMPGF8OQTZeWJ4U",
     authDomain: "yard-sale-fe238.firebaseapp.com",
@@ -8,26 +20,23 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-var email = '';
-var password = '';
-var oldEmail = '';
-var oldPassword = '';
+
 function newAccount() {
     email = $('#newemailInput').val();
     password = $('#newpasswordInput').val();
 };
-function oldUser() {
+function oldAccount() {
     oldEmail = $('#oldEmail').val();
     oldPassword = $('#oldPassword').val();
 };
 
 $(document).ready(function () {
-    $("#createAccount").on('click', function(event) {
+    $("#createAccount").on('click', function (event) {
         event.preventDefault();
         $('#new-user-modal').show();
         $('#signIn').hide();
         $('#createAccount').hide();
-        newAccount(email, password);       
+        newAccount(email, password);
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -47,10 +56,22 @@ $(document).ready(function () {
         });
     });
 });
-$('#uploadBtn').on('click', function(event) {
+var items = [];
+
+function addItem() {
+    event.preventDefault();
+    var newItem = {
+        text: $newItemInput.val().trim(),
+        complete: false
+    };
+    $.post("/api/posts", items, );
+    $newItemInput.val("");
+};
+
+$('#uploadBtn').on('click', function (event) {
     event.preventDefault();
 
-})
+});
 
 
 

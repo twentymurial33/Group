@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets\css\style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Seller</title>
 </head>
 
@@ -26,7 +29,6 @@
                 <button type="button" class="btn btn-default navbar-btn" id="signinBtn">Sign in</button>
                 <a class="sellStuff" href="#">Sell Something!</a>
             </form>
-
         </div>
     </nav>
     <div class="form-group-sell">
@@ -35,7 +37,7 @@
         <label for="comment">Item Description:</label>
         <textarea class="form-control" rows="10" id="item-description"></textarea>
         <label for="usr">Image URL:</label>
-        <input type="text" class="form-control" id="itemUrl">
+        <input type="text" class="form-control" id="item-url">
         <br>
         <label for="category">Select Category:</label>
         <select class="custom-select" id="category">
@@ -48,6 +50,7 @@
         <br>
         <button class="btn btn-default" id="uploadBtn">Upload It!</button>
     </div>
+    <script src='assets/js/yardsale.js'></script>
 </body>
 
 </html>
