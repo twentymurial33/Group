@@ -13,16 +13,6 @@ var Products = sequelize.define("products", {
       type: Sequelize.INT,
       primaryKey: true
   },
-  // Foreign Key
-  user_id: {
-    type: Sequelize.INTEGER,
-    references: {
-      // This is a reference to another model
-      model: User,
-      // This is the column name of the referenced model
-      key: 'id',
-    }
-  },
   product_name: {
     type: Sequelize.STRING
   },

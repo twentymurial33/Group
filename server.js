@@ -18,6 +18,9 @@ app.get("/",function(req,res){
   res.render("pages/index");
 })
 
+require('./routes/htmlroutes.js')(app);
+require('./routes/apiroutes.js')(app);
+
 app.listen(PORT,function(){
    console.log("Server Started on Port 3000");
 })
