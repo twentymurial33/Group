@@ -2,32 +2,52 @@ const path = require('path');
 const sequelize = require('sequelize');
 const db = require('../models')
 
-// db.Sequelize = Sequelize;  
-// db.sequelize = sequelize;
-
-// db.user = require('../models/user.js')(sequelize, Sequelize);  
-// db.products = require('../models/products.js')(sequelize, Sequelize);  
-
-
 
 module.exports = function(app) {
-  app.get('/api/posts', function(req, res){
-    var query = {};
-    if (req.query.seller_id) {
+  // GET route for getting list of all products
+  app.get('/api/products', function(req, res){
+    if (req.body.category) {
       query.SellerID = req.query.seller_id
     }
-    db.Post.findAll({
-      where: query,
-      include: [db.Product]
-    }).then(function(dbPost){
-      res.json(dbPost)
+    db.products.findAll({})
+      .then(function(dbproducts){
+       res.json(dbproducts);
     });
 
   });
 
-  app.post('/api/posts', function (req, res){
-    db.Post.create(req.body).then(dbPost => {
-      res.json(dbPost)
+  // GET route for getting product by category
+
+  app.get("/api/products/:category", function(req, res) {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbproducts) {
+      console.log(dbproducts);
+      res.json(dbproducts);
+    });
+  });
+
+
+
+  // GET route for getting a particular product
+  app.get("/api/products/:id", function(req, res) {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbproducts) {
+      console.log(dbproducts);
+      res.json(dbproducts);
+    });
+  });
+
+  // POST
+
+  app.post('/api/products', function (req, res){
+    db.products.create(req.body).then(dbproducts => {
+      res.json(dbproducts)
     });
   });
 }
