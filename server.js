@@ -18,6 +18,10 @@ app.get("/",function(req,res){
   res.render("pages/index");
 })
 
+app.get('/about', function(req, res) {
+	res.render('pages/about');
+});
+
 require('./routes/htmlroutes.js')(app);
 require('./routes/apiroutes.js')(app);
 
