@@ -1,9 +1,23 @@
 var express = require("express");
 var bodyParser = require("body-parser");
+var exphbs = require('express-handlebars');
 var PORT = process.env.PORT || 3000;
 var path=require("path");
 
 var app = express();
+
+app.engine('handlebars', exphbs({
+
+	defaultLayout: 'main',
+
+	layoutsDir: 'views/layouts'
+
+}));
+
+app.set('view engine', 'handlebars');
+
+app.set('views', path.resolve(__dirname,'views'));
+
 
 
 
@@ -11,15 +25,21 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-app.set("view engine","ejs");
-// app.engine("ejj", );
 
 app.get("/index",function(req,res){
-  res.render("pages/index");
+  res.render("index");
+})
+
+app.get("/",function(req,res){
+  res.render("seller");
 })
 
 app.get('/about', function(req, res) {
-	res.render('pages/about');
+	res.render('about');
+});
+
+app.get('/buy', function(req, res) {
+	res.render('buy');
 });
 
 require('./routes/htmlroutes.js')(app);
