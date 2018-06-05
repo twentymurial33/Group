@@ -3,13 +3,13 @@ const path = require('path');
 
 module.exports = function(app) {
   app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname, '../public/assets/index.html'))
+    res.sendFile(path.join(__dirname, '../views/index.handlebars'))
   });
 
-  app.get('/sell', function(req, res){
-    res.sendFile(path.join(__dirname, '../public/assets/seller.js'))
+  app.get('/seller', function(req, res){
+    res.sendFile(path.join(__dirname, '../views/seller.handlebars'))
   });
   app.get('/buy', function(req, res){
-    res.sendFile(path.join(__dirname, '../public/assets/THINGGOESHERE'))
+    res.sendFile(path.join(__dirname, '../views/buy.handlebars'))
   });
 }
