@@ -5,7 +5,7 @@ const db = require('../models')
 
 module.exports = function(app) {
   // GET route for getting list of all products
-  app.get('/api/products', function(req, res){
+  app.get('/api/posts', function(req, res){
     if (req.body.category) {
       query.SellerID = req.query.seller_id
     }
@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   // GET route for getting product by category
 
-  app.get("/api/products/:category", function(req, res) {
+  app.get("/api/posts/:category", function(req, res) {
     db.Post.findOne({
       where: {
         id: req.params.id
@@ -32,7 +32,7 @@ module.exports = function(app) {
 
 
   // GET route for getting a particular product
-  app.get("/api/products/:id", function(req, res) {
+  app.get("/api/posts/:id", function(req, res) {
     db.Post.findOne({
       where: {
         id: req.params.id
@@ -45,7 +45,7 @@ module.exports = function(app) {
 
   // POST
 
-  app.post('/api/products', function (req, res){
+  app.post('/api/posts', function (req, res){
     db.products.create(req.body).then(dbproducts => {
       res.json(dbproducts)
     });
