@@ -31,11 +31,11 @@ app.get("/index",function(req,res){
 })
 
 app.get("/",function(req,res){
-  res.render("seller");
+  res.render("index");
 })
 
-app.get('/about', function(req, res) {
-	res.render('about');
+app.get('/seller', function(req, res) {
+	res.render('seller');
 });
 
 app.get('/buy', function(req, res) {

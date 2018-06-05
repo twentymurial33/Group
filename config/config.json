@@ -1,33 +1,21 @@
 {
   "development": {
-    "username": "root",
-<<<<<<< HEAD
-    "password": "Chilipepperwilson1984",
-=======
-    "password": "root",
->>>>>>> d1bce39eb950ccf2ab101df5310b9c3e362f2813
+    "username": "user",
+    "password": "password",
     "database": "yard_sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-<<<<<<< HEAD
-    "password": "Chilipepperwilson1984",
-=======
-    "password": "root",
->>>>>>> d1bce39eb950ccf2ab101df5310b9c3e362f2813
+    "username": "user",
+    "password": "password",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-<<<<<<< HEAD
-    "password": "Chilipepperwilson1984",
-=======
-    "password": "root",
->>>>>>> d1bce39eb950ccf2ab101df5310b9c3e362f2813
+    "username": "user",
+    "password": "password",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
