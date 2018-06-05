@@ -46,7 +46,8 @@ module.exports = function(app) {
   // POST
 
   app.post('/api/posts', function (req, res){
-    db.products.create(req.body).then(dbproducts => {
+    console.log("we hit the route!!!!", req.body)
+    db.Product.create(req.body).then(dbproducts => {
       res.json(dbproducts)
     });
   });

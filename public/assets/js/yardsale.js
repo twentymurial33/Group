@@ -27,6 +27,7 @@ function oldAccount() {
 };
 
 $(document).ready(function () {
+    console.log("file loaded!!!");
     $("#createAccount").on('click', function (event) {
         event.preventDefault();
         $('#new-user-modal').show();
@@ -55,18 +56,28 @@ $(document).ready(function () {
 });
 
 function addItem(event) {
-    event.preventDefault();
+    //event.preventDefault();
     var itemInput = $('#item-name').val().trim();
-    var descriptionInput = $('#item-dewscription').val().trim();
+    var descriptionInput = $('#item-description').val().trim();
     var urlInput = $('#item-url').val().trim();
     var categoryInput = $('#category').val().trim();
-    
-    $.post("/api/posts", itemInput, descriptionInput, urlInput, categoryInput);
+    console.log("about to do ajax call!");
+    var newItem = {
+        product_name: itemInput,
+        product_description: descriptionInput,
+        img_url: urlInput,
+        category: categoryInput,
+        price: 10.10,
+        price_negotiable: true,
+        sold: false
+    }
+    $.post("/api/posts", newItem);
     
 };
 
 $('#uploadBtn').on('click', function (event) {
     event.preventDefault();
+    console.log("button clicked!!");
     addItem();
 
 });

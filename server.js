@@ -45,6 +45,10 @@ app.get('/buy', function(req, res) {
 require('./routes/htmlroutes.js')(app);
 require('./routes/apiroutes.js')(app);
 
-app.listen(PORT,function(){
-   console.log("Server Started on Port 3000");
+var db = require ('./models')
+
+db.sequelize.sync().then(function(){
+	app.listen(PORT,function(){
+		console.log("Server Started on Port 3000");
+	 })
 })

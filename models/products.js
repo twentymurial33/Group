@@ -2,14 +2,18 @@ module.exports = function(sequelize, DataTypes) {
 
 var Product = sequelize.define("Product", {
   // Primary Key
-  product_id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true
-  },
+  // product_id: {
+  //     type: DataTypes.INTEGER,
+  //     autoIncrement: true,
+  //     primaryKey: true
+  // },
   product_name: {
     type: DataTypes.STRING
   },
   product_description: {
+    type: DataTypes.STRING
+  },
+  category: {
     type: DataTypes.STRING
   },
   img_url: {
