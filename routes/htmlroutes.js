@@ -21,7 +21,7 @@ module.exports = function(app) {
     res.render('buy',newItem);
   });
 });
-}
+
 
   app.get('/seller', function(req, res) {
     return( 'seller', {variableName: 'products'} );
@@ -29,4 +29,4 @@ module.exports = function(app) {
   .then(function(product) {
     res.render('seller',newItem);
   });
-});
+})};
