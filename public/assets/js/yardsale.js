@@ -216,4 +216,20 @@ $('#uploadBtn').on('click', function (event) {
 });
 
 
+app.get("api/posts", function(req, res) {
+  db.Products.findAll()
+  .then(function () {
+      db.Content.findAll()
+          .then(function (dbproducts) {
+              });
+              return({products: dbproducts});
+          })
+          .catch(function (err) {
+              res.json(err);
+          })
+  .catch(function (err) {
+      res.json(err);
+  })
 
+
+})
