@@ -7,6 +7,9 @@ var Product = sequelize.define("Product", {
   //     autoIncrement: true,
   //     primaryKey: true
   // },
+  seller_name: {
+    type: DataTypes.STRING
+  },
   product_name: {
     type: DataTypes.STRING
   },

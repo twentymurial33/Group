@@ -211,6 +211,7 @@ function addItem(event) {
     var categoryInput = $('#category').val().trim();
     console.log("about to do ajax call!");
     var newItem = {
+        seller_name: email,
         product_name: itemInput,
         product_description: descriptionInput,
         img_url: urlInput,
