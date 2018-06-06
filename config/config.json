@@ -1,21 +1,33 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": null,
+=======
+    "password": "root",
+>>>>>>> ab4b02e4a8bc1b010869d40fcd3dd91a8a53caa2
     "database": "yard_sale_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": null,
+=======
+    "password": "root",
+>>>>>>> ab4b02e4a8bc1b010869d40fcd3dd91a8a53caa2
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
+<<<<<<< HEAD
     "password": null,
+=======
+    "password": "root",
+>>>>>>> ab4b02e4a8bc1b010869d40fcd3dd91a8a53caa2
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"
