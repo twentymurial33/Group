@@ -5,54 +5,74 @@ var email = '';
 var password = '';
 var oldEmail = '';
 var oldPassword = '';
-
-var config = {
-    apiKey: "AIzaSyAz8V0oTOGh0If5LubLLMPGF8OQTZeWJ4U",
-    authDomain: "yard-sale-fe238.firebaseapp.com",
-    databaseURL: "https://yard-sale-fe238.firebaseio.com",
-    projectId: "yard-sale-fe238",
-    storageBucket: "yard-sale-fe238.appspot.com",
-    messagingSenderId: "1098564084379"
-};
-firebase.initializeApp(config);
-var database = firebase.database();
-
-function newAccount() {
-    email = $('#newemailInput').val();
-    password = $('#newpasswordInput').val();
-};
-function oldAccount() {
-    oldEmail = $('#oldEmail').val();
-    oldPassword = $('#oldPassword').val();
-};
-
 $(document).ready(function () {
-    console.log("file loaded!!!");
+    var config = {
+        apiKey: "AIzaSyAz8V0oTOGh0If5LubLLMPGF8OQTZeWJ4U",
+        authDomain: "yard-sale-fe238.firebaseapp.com",
+        databaseURL: "https://yard-sale-fe238.firebaseio.com",
+        projectId: "yard-sale-fe238",
+        storageBucket: "yard-sale-fe238.appspot.com",
+        messagingSenderId: "1098564084379"
+    };
+    firebase.initializeApp(config);
+    var database = firebase.database();
+
+    function newAccount() {
+        email = $('#newemailInput').val();
+        password = $('#newpasswordInput').val();
+    };
+    function oldAccount() {
+        oldEmail = $('#oldEmail').val();
+        oldPassword = $('#oldPassword').val();
+    };
+    function newUserData() {
+        newAccount();
+        database.ref().push({
+            email: email,
+            password: password,
+            dateAdded: firebase.database.ServerValue.TIMESTAMP
+        });
+        database.ref().on("child_added", function (childSnapshot) {
+            console.log(childSnapshot.val().email);
+            console.log(childSnapshot.val().password);
+        });
+    };
+    $('.close').on('click', function(event) {
+      $('#new-user-modal').hide();
+      $('#return-user-modal').hide();
+      $('#signIn').show();
+        $('#createAccount').show();
+    })
     $("#createAccount").on('click', function (event) {
         event.preventDefault();
         $('#new-user-modal').show();
         $('#signIn').hide();
         $('#createAccount').hide();
+    });
+    $('#newclient-form').on('submit', function(event) {
+      event.preventDefault();
         newAccount(email, password);
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            console.log(error)
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/weak-password') {
                 console.log(error);
             };
+            newUserData();
         });
     });
-    $('#signIn').on('click', function (event) {
-        event.preventDefault();
-        $('#return-user-modal').show();
-        $('#signIn').hide();
-        $('#createAccount').hide();
-        oldAccount();
-        firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
-        });
+$('#signIn').on('click', function (event) {
+    event.preventDefault();
+    $('#return-user-modal').show();
+    $('#signIn').hide();
+    $('#createAccount').hide();
+    oldAccount();
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
     });
+    
 
   //JUST in case I fuck this up...this is where it all started
 
@@ -185,7 +205,6 @@ $(document).ready(function () {
   }
   //THIS IS WHERE THE NIGHTMARE ENDS !!!!!!
 });
-
 function addItem(event) {
     //event.preventDefault();
     var itemInput = $('#item-name').val().trim();
@@ -194,6 +213,7 @@ function addItem(event) {
     var categoryInput = $('#category').val().trim();
     console.log("about to do ajax call!");
     var newItem = {
+        seller_name: email,
         product_name: itemInput,
         product_description: descriptionInput,
         img_url: urlInput,
@@ -207,14 +227,12 @@ function addItem(event) {
     $('#item-description').empty();
     $('#item-url').empty();
 };
-
 $('#uploadBtn').on('click', function (event) {
     event.preventDefault();
     console.log("button clicked!!");
     addItem();
-
 });
-
+});
 
 app.get("api/posts", function(req, res) {
   db.Products.findAll()
