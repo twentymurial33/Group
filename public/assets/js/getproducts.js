@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 function displayNewItem (response) {
     // console.log(response)
     for (let index = 0; index < response.length; index++) {
@@ -8,6 +10,7 @@ function displayNewItem (response) {
         var detailButton = $('<a class = "btn btn-default">')
         var itemName = item.product_name;
         var itemInfo = item.product_description;
+        var verticalSpace = $('<br>')
         newHeading.text(itemName);
         newDiv.append(newHeading);
         newBody.text(itemInfo); 
@@ -15,16 +18,10 @@ function displayNewItem (response) {
         detailButton.text('Details');
         newDiv.append(detailButton);
         $('#results-field').append(newDiv)
+        $('#results-field').append(verticalSpace)
 
-    }
+    }}
     
-    
-    
-
-
-
-}
-
 function getItems () {
 var url = "/api/posts"
 
@@ -35,3 +32,12 @@ $.ajax({
     displayNewItem(response)
 }) 
 }
+
+$('#get-items').on('click', function (event) {
+    event.preventDefault();
+    console.log(event)
+    getItems();
+    
+  })
+
+})
