@@ -223,9 +223,9 @@ function addItem(event) {
         sold: false
     }
     $.post("/api/posts", newItem);
-    $('#item-name').empty();
-    $('#item-description').empty();
-    $('#item-url').empty();
+    $('#item-name').val('');
+    $('#item-description').val('');
+    $('#item-url').val('');
 };
 $('#uploadBtn').on('click', function (event) {
     event.preventDefault();
