@@ -23,12 +23,15 @@
     <div class="form-group-sell">
         <label for="usr">Item Name:</label>
         <input type="text" class="form-control" id="item-name">
+        
         <label for="comment">Item Description:</label>
         <textarea class="form-control" rows="10" id="item-description"></textarea>
+        
         <label for="usr">Image URL:</label>
         <input type="text" class="form-control" id="item-url">
         <br>
         <label for="category">Select Category:</label>
+        <p>{{newItem}}</p>
         <select class="custom-select" id="category">
             <option value="clothing">Clothing</option>
             <option value="furniture">Furniture</option>
