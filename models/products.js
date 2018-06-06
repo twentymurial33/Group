@@ -7,9 +7,9 @@ var Product = sequelize.define("Product", {
   //     autoIncrement: true,
   //     primaryKey: true
   // },
-  seller_name: {
-    type: DataTypes.STRING
-  },
+  // seller_name: {
+  //   type: DataTypes.STRING
+  // },
   product_name: {
     type: DataTypes.STRING
   },
@@ -39,4 +39,3 @@ var Product = sequelize.define("Product", {
 return Product
 }
 
-module.exports=Product;
