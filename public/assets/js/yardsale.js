@@ -37,15 +37,21 @@ $(document).ready(function () {
             console.log(childSnapshot.val().password);
         });
     };
+    $('.close').on('click', function(event) {
+      $('#new-user-modal').hide();
+      $('#return-user-modal').hide();
+    })
     $("#createAccount").on('click', function (event) {
         event.preventDefault();
         $('#new-user-modal').show();
         $('#signIn').hide();
         $('#createAccount').hide();
     });
-    $('#signupUser').on('click', function(event) {
+    $('#newclient-form').on('submit', function(event) {
+      event.preventDefault();
         newAccount(email, password);
         firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+            console.log(error)
             var errorCode = error.code;
             var errorMessage = error.message;
             if (errorCode == 'auth/weak-password') {
@@ -64,6 +70,7 @@ $('#signIn').on('click', function (event) {
         var errorCode = error.code;
         var errorMessage = error.message;
     });
+    
 
   //JUST in case I fuck this up...this is where it all started
 
