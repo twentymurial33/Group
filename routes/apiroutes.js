@@ -5,9 +5,10 @@ const db = require('../models')
 
 module.exports = function(app) {
   // GET route for getting list of all products
-  app.get('/api/posts', function(req, res){
-    db.Product.findAll({})
-      .then(function(dbproducts){
+  app.get('/api/posts/', function(req, res){
+    db.Product.findAll()
+      .then(dbproducts => {
+        // console.log(dbproducts)
        res.json(dbproducts);
     });
 
@@ -47,3 +48,5 @@ module.exports = function(app) {
     });
   });
 }
+
+
