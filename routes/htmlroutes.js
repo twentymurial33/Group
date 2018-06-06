@@ -13,11 +13,12 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, '../views/buy.handlebars'))
   });
 
+  app.get('/seller', function(req, res) {
+    res.render( 'seller', {variableName: 'someDataToDisplayOnPage'} );
+  });
+  db.Products.findAll()
+  .then(function(products) {
+    res.render('seller.handlebars',newItem);
+  });
+
 }
-app.get('/seller', function(req, res) {
-  res.render( 'seller', {variableName: 'someDataToDisplayOnPage'} );
-});
-db.Products.findAll()
-.then(function(products) {
-  res.render('seller.handlebars',newItem);
-});
