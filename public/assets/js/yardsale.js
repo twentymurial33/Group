@@ -40,6 +40,8 @@ $(document).ready(function () {
     $('.close').on('click', function(event) {
       $('#new-user-modal').hide();
       $('#return-user-modal').hide();
+      $('#signIn').show();
+        $('#createAccount').show();
     })
     $("#createAccount").on('click', function (event) {
         event.preventDefault();
