@@ -1,4 +1,5 @@
 const path = require('path');
+const db = require('../models')
 
 
 module.exports = function(app) {
@@ -16,8 +17,8 @@ module.exports = function(app) {
   app.get('/seller', function(req, res) {
     res.render( 'seller', {variableName: 'someDataToDisplayOnPage'} );
   });
-  db.Products.findAll()
-  .then(function(products) {
+  db.Product.findAll()
+  .then(function(product) {
     res.render('seller.handlebars',newItem);
   });
 
