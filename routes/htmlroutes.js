@@ -16,10 +16,10 @@ module.exports = function(app) {
 
   app.get('/seller', function(req, res) {
     res.render( 'seller', {variableName: 'someDataToDisplayOnPage'} );
-  });
+  
   db.Product.findAll()
   .then(function(product) {
     res.render('seller.handlebars',newItem);
   });
-
+});
 }

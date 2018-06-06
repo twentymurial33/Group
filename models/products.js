@@ -38,3 +38,5 @@ var Product = sequelize.define("Product", {
 });
 return Product
 }
+
+module.exports=Product;
