@@ -12,7 +12,14 @@
             <br>
         </div>
         <button class="btn btn-default" data-toggle="modal" data-target="#signIn" id="createAccount">Create Account</button>
-        <button class="btn btn-default" data-toggle="modal" data-target="#signIn" id="signIn">Sign In</button>
+            <p>{{newPerson}}</p>
+        {{#each users}}
+		<h4>{{ first_name }}</h4>
+		<h4>{{ last_name }}</h4>
+        <h4>{{ email }}</h4>
+	
+{{/each}}
+<button class="btn btn-default" data-toggle="modal" data-target="#signIn" id="signIn">Sign In</button>
     </div>
 
     <div id="home" "new-user-modal" class="modal" tabindex="-1" role="dialog">
