@@ -37,6 +37,7 @@ $.ajax({
 
 $('#get-items').on('click', function (event) {
     event.preventDefault();
+    $('#result-field').empty();
     url = "/api/posts"
     getItems();
     
@@ -44,6 +45,7 @@ $('#get-items').on('click', function (event) {
 
 $('#find-items').on('click', function (event){
     event.preventDefault();
+    $('#result-field').empty();
     let cat = $('#category').val();
     console.log(cat)
     url = "/api/posts/category/" + cat
