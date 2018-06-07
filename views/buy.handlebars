@@ -33,16 +33,17 @@
         <td>{{img_url}}</td>
 	</tr>
 {{/each}}
-    <select class="custom-select" id="category">
+    <div class = 'container-fluid'>
+        <select class="form-control col-md-8" id="category">
             <option value="clothing" id="clothing">Clothing</option>
             <option value="furniture" id="furniture">Furniture</option>
             <option value="sportingGoods" id="sporting">Sporting Goods</option>
             <option value="sportingGoods" id="household">Household Items</option>
             <option value="misc" id="misc">Misc</option>
         </select>
+        <button class = 'btn btn-default col-md-offset-1' id = 'find-items'>Find!</button>
+        <button class = 'btn btn-default' id = 'get-items'>Get All Items</button>
         <br>
-    <div class = 'container'>
-        <button class = 'btn btn-default' id = 'get-items'>Get Items</button>
     </div>
     <div class = 'container'>
         <div id = 'results-field' class = 'row'>

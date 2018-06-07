@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+var url;
+
 function displayNewItem (response) {
     // console.log(response)
     for (let index = 0; index < response.length; index++) {
@@ -23,7 +25,7 @@ function displayNewItem (response) {
     }}
     
 function getItems () {
-var url = "/api/posts"
+// var url = "/api/posts"
 
 $.ajax({
     url: url,
@@ -35,9 +37,19 @@ $.ajax({
 
 $('#get-items').on('click', function (event) {
     event.preventDefault();
-    console.log(event)
+    url = "/api/posts"
     getItems();
     
   })
+
+$('#find-items').on('click', function (event){
+    event.preventDefault();
+    let cat = $('#category').val();
+    console.log(cat)
+    url = "/api/posts/category/" + cat
+    getItems()
+})
+
+
 
 })
