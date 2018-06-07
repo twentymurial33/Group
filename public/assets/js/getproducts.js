@@ -6,7 +6,7 @@ function displayNewItem (response) {
     // console.log(response)
     for (let index = 0; index < response.length; index++) {
         let item = response[index];
-        var newDiv = $('<div class = "jumbotron">');
+        var newDiv = $('<div class = "jumbotron col-md-offset-1">');
         var newHeading = $('<h2>');
         var newBody = $('<p>');
         var detailButton = $('<a class = "btn btn-default">')
