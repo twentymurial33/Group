@@ -45,7 +45,7 @@ $('#get-items').on('click', function (event) {
 
 $('#find-items').on('click', function (event){
     event.preventDefault();
-    $('#result-field').empty();
+    $('#results-field').empty();
     let cat = $('#category').val();
     console.log(cat)
     url = "/api/posts/category/" + cat
